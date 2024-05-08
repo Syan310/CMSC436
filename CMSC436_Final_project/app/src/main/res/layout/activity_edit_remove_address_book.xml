@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGrey"
+    android:orientation="vertical"
+    tools:context="com.addressbook.android.main.EditRemoveAddressBookActivity">
+
+    <include 
+        android:id="@+id/toolbar"
+        layout="@layout/layout_tool_bar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingBottom="@dimen/dim_10"
+            android:paddingEnd="@dimen/dim_45"
+            android:paddingStart="@dimen/dim_45"
+            android:paddingTop="@dimen/dim_10">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_name"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/rounder_corner"
+                android:ellipsize="end"
+                android:hint="@string/hint_username"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/Gray70"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/lbl_email"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toBottomOf="@+id/edt_name"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/rounder_corner"
+                android:ellipsize="end"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/Gray70"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmail"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_12"
+                android:text="@string/lbl_contact_no"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toBottomOf="@+id/edt_email"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_contact_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/rounder_corner"
+                android:ellipsize="end"
+                android:hint="@string/hint_contact_no"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/Gray70"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toBottomOf="@+id/tvContact"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dim_12"
+                android:text="@string/lbl_active"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_12"
+                app:layout_constraintTop_toBottomOf="@+id/edt_contact_no"/>
+
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvActive"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save_update"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:background="@drawable/rounded_corner_button"
+                android:gravity="center"
+                android:text="@string/action_save"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintTop_toBottomOf="@+id/switch_active"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
